@@ -1,0 +1,49 @@
+{% extends 'partials/base.html' %}
+{% block title %}Customer Page{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-header text-white" style="background-color: rgb(47,79,79);">
+                    Profile Page
+                </div>
+                <div class="row p-3">
+                    <div class="col-md-8">
+                        <table class="table table-borderless">
+                            <thead>
+                                <span class="h4">Porfile Information</span class="h4">
+                                <hr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Name</th>
+                                    <td>{{ workers.username }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email</th>
+                                    <td>{{ workers.email }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Phone</th>
+                                    <td>{{ workers.profile.phone }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Address</th>
+                                    <td>{{ workers.profile.address }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-thumbnail" src="{{ workers.profile.image.url }}" alt="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

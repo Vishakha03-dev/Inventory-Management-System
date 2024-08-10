@@ -1,0 +1,35 @@
+{% extends 'partials/base.html' %}
+{% block title %}Order Page{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center text-dark m-4">Orders Details</h1>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-10 offset-md-1">
+            <table class="table bg-white">
+                <thead class="text-white" style="background-color: rgb(47,79,79);">
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Ordered by</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for orders in orders %}
+                    <tr>
+                        <td>{{ orders.product }}</td>
+                        <td>{{ orders.product.category }}</td>
+                        <td>{{ orders.order_quantity }}</td>
+                        <td>{{ orders.staff.username }}</td>
+                        <td>{{ orders.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
